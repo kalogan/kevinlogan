@@ -1,0 +1,94 @@
+#search *, #inline-search *, #toggles * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+div[id^=branding-bar], section[id^=branding-bar], #toggles { -webkit-transition: margin 0.5s; -moz-transition: margin 0.5s; transition: margin 0.5s; }
+
+.search-open div[id^=branding-bar], .search-open section[id^=branding-bar], .search-open #toggles { margin-top: 50px; }
+
+#search { background: #990000; font-size: 16px; height: 45px; position: absolute; top: 0; width: 100%; z-index: 4; -webkit-font-smoothing: initial; -moz-font-smoothing: initial; font-smoothing: initial; -webkit-transition: height 500ms ease; -moz-transition: height 500ms ease; transition: height 500ms ease; }
+#search form { position: relative; }
+.search-open #search { height: 50px; }
+#search .wrapper { padding: 10px 2.35765% 0; }
+
+
+
+#toggles a.button:hover { background-color: #990000; color: #fff; }
+.touch #toggles a.button.hover { background-color: #fff !important; color: #990000 !important; }
+#toggles a.search-toggle { background: #990000 url("https://assets.iu.edu/search/2.x/search.png") no-repeat center center; background-size: 18px; height: 31px; font-size: 0; padding-left: 24px; margin-top:11px; }
+.search-open #toggles a.search-toggle { background-image: url("https://assets.iu.edu/search/2.x/close.png"); background-size: 25px; }
+#toggles .wrapper { padding: 0 2.35765%; }
+
+/* allows search icon to disappear on desktop but appear on mobile */
+@media screen and min-width: 300px{
+	#toggles { font-size: 16px; position: fixed; top: 6px; width: 100%; pointer-events: none; z-index: 11; margin-top:11px;}
+	#toggles a.button { pointer-events: auto; pointer-events: initial; position: relative; font-family: BentonSansBold, Arial, sans-serif; font-weight: normal; float: right; margin-top: 11px; padding: 4px 8px; text-transform: uppercase; width: auto; }
+}
+
+@media screen and (min-width: 768px) { 
+#toggles { font-size: 16px; position: absolute; top: 6px; width: 100%; pointer-events: none; z-index: 11; }
+#toggles a.button { pointer-events: auto; pointer-events: initial; position: relative; font-family: BentonSansBold, Arial, sans-serif; font-weight: normal; float: right; margin-top: 5px; padding: 4px 8px; text-transform: uppercase; width: auto; }
+#toggles a.search-toggle { border-radius: 0; background-color: #7A1705; background-size: 22px; border-left: 1px solid #990000; border-right: 1px solid #990000; border-top: none; border-bottom: none; margin-top: 5; line-height: 34px; height: 46px; padding-left: 30px; } }
+
+@media screen and (min-width: 1020px) {
+	#toggles { font-size: 16px; position: absolute; top: 6px; width: 100%; pointer-events: none; z-index: 11; }
+	
+	
+	 #search .wrapper { padding: 10px 0 0; max-width: 63.75em; margin-left: auto; margin-right: auto; }
+  #search .wrapper:after { content: ""; display: table; clear: both; }
+  #toggles .wrapper { padding: 0; max-width: 63.75em; margin-left: auto; margin-right: auto; }
+  #toggles .wrapper:after { content: ""; display: table; clear: both; } }
+body > table, .search-box table, .search-results table { background: none; margin: 0; overflow: visible; border: none; }
+body > table td, body > table th, .search-box table td, .search-box table th, .search-results table td, .search-results table th { background: none; padding: 0; border: none; display: table-cell; }
+body > table tbody tr:nth-child(odd), .search-box table tbody tr:nth-child(odd), .search-results table tbody tr:nth-child(odd) { background: none; }
+
+body > table tr.gsc-completion-selected { background: #eee !important; }
+
+/* Search Boxes */
+.search-box table.gsc-search-box td.gsc-input { padding-right: 0; }
+.search-box table.gsc-search-box td.gsc-clear-button { display: none; }
+.search-box .gsc-input-box { border: none; height: auto; }
+.search-box .gsc-input-box ::-ms-clear { display: none; }
+.search-box .cse input.gsc-search-button, .search-box input.gsc-search-button { font-family: BentonSansBold, Arial, sans-serif; font-weight: normal; background: #990000; border: 1px solid #990000; color: #fff; font-size: 1rem; font-weight: normal; padding: 8px; margin-bottom: 0; min-width: 45px; height: 35px; line-height: 1; background-image: none; -webkit-appearance: button; /* fix that thing on mobile safari */ }
+.search-box .cse input.gsc-search-button:hover, .search-box input.gsc-search-button:hover { background: transparent; color: #990000; border-color: #990000; cursor: pointer; }
+.search-box .cse .gsc-search-button input.gsc-search-button-v2, .search-box input.gsc-search-button-v2 { margin-top: 0; }
+.search-box input.gsc-input { height: 35px; color: #333; }
+.search-box input[type="text"] { margin-bottom: 0; box-shadow: none; line-height: 1; height: 35px !important; padding-left: 8px !important; background-color: #fff !important; background-position: 8px center !important; margin: 0 !important; }
+.search-box .gsc-search-box-tools input[type="text"] { background-color: transparent !important; }
+.search-box input[type="text"]:focus { box-shadow: none; }
+.search-box .gsst_a .gscb_a { color: #990000; }
+.search-box .gsc-input-box-hover .gsst_a .gscb_a { color: #7A1705; }
+
+#search.search-box input.gsc-search-button { border-color: #fff; }
+#search.search-box input.gsc-search-button:hover { border-color: #fff; background: #fff; color: #990000; }
+
+#content form.search-toggle { margin-bottom: 24px; }
+
+#content .search-box input.gsc-input, #content .search-box input.gsc-search-button { font-family: BentonSansBold, Arial, sans-serif; font-weight: normal; margin-bottom: 0; box-shadow: none; font-size: 1em; }
+#content .search-box td.gsc-clear-button { display: table-cell; }
+#content .search-box .gsc-search-box-tools td.gsc-clear-button { display: none; }
+#content .search-box .gsc-input-box { border: 1px solid #b6b5b5; }
+
+/* Results */
+.search-results .gsc-control-cse { padding: 0; }
+.search-results .gsc-above-wrapper-area { border-bottom: 0; }
+.search-results .gsc-results { width: 100%; }
+.search-results .gsc-webResult.gsc-result.gsc-promotion, .search-results .gsc-webResult.gsc-result.gsc-promotion:hover { background-color: #EDEBEB; border-color: #b6b5b5; padding: 8px; }
+.search-results .gs-promotion .gs-snippet, .search-results .gs-promotion .gs-title .gs-promotion-title-right, .search-results .gs-promotion .gs-title .gs-promotion-title-right * { color: #333; }
+.search-results .gs-promotion-text-cell-with-image { padding-left: 10px; }
+.search-results .gsc-thumbnail-inside, .search-results .gsc-url-top { padding: 0; }
+.search-results .gs-promotion .gs-visibleUrl, .search-results .gs-promotion .gs-visibleUrl-short { color: #4d4d4d; }
+.search-results .gsc-url-top, .search-results .gs-result a.gs-visibleUrl, .search-results .gs-result .gs-visibleUrl { color: #666666; }
+.search-results .gsc-table-result { font-family: BentonSansRegular, 'Arial Narrow', Arial, sans-serif; font-weight: normal; }
+.search-results .gsc-result .gs-title { height: auto; overflow: visible; }
+.search-results .gs-promotion a, .search-results .gs-promotion a *, .search-results .gs-result .gs-title, .search-results .gs-result .gs-title *, .search-results a, .search-results a b, .search-results a em, .search-results .gsc-cursor-page { color: #990000 !important; }
+.search-results a.gs-title:before, .search-results a.gs-image:before { display: none !important; }
+.search-results .gsc-selected-option-container { font-family: BentonSansBold, Arial, sans-serif; font-weight: normal; width: auto !important; }
+.search-results .gsc-control-cse .gsc-option-selector { border-color: #909090 transparent; border-style: solid; border-width: 4px 4px 0 4px; width: 0; height: 0; margin-left: -2px; top: 50%; margin-top: -2px; position: absolute; background-image: none; padding: 0; }
+.search-results .gsc-option-menu-item-highlighted { background: #eee url("//ssl.gstatic.com/ui/v1/menu/checkmark2.png") no-repeat left center; }
+
+/* Fix for legacy template sites */
+#content .search-box table, #content .search-results table { overflow: visible; }
+
+#content form.search-toggle, #content #inline-search form { padding: 0; background: none; }
+#content form.search-toggle input, #content #inline-search form input { vertical-align: top; }
+
+#content #inline-search table, #content #inline-search table td, #content #inline-search table th { margin: 0; padding: 0; background: none; border: none; font-size: 1em; }
